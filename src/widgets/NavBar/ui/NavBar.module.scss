@@ -1,0 +1,54 @@
+.navbar {
+  width: 100%;
+  padding: 15px;
+  position: fixed;
+  background-color: var(--color1);
+  z-index: 50;
+}
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggleBtn {
+  overflow: hidden;
+}
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 40%;
+}
+.link {
+  font-size: var(--font-size-l);
+  color: var(--color3);
+}
+.activeLink {
+  font-size: var(--font-size-l);
+  color: var(--color4);
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 30%;
+}
+.auth {
+  width: 30%;
+  display: flex;
+  justify-content: right;
+}
+
+.InAccount {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+// .activeLink {
+//   font-size: var(--font-size-l);
+//   transform: translate(0, -10px);
+//   color: var(--color2);
+// }

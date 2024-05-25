@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "email": "saha@ldif.com",
+      "password": "$2a$10$LpWLbjNa8jVzzXnJ8ctg4./Q9tiGLYQ0HyCSzoP8UXe3mrjKF1zNm",
+      "name": "sasha",
+      "id": "x6ug4cY"
+    },
+    {
+      "email": "lizakob@list.ru",
+      "password": "$2a$10$Q0hgfbgK37atLLp0UF1Q3ONJl2zrqTF6z/otstqkcf96UBIo1YNfy",
+      "name": "liza",
+      "id": "sStloF8",
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpemFrb2JAbGlzdC5ydSIsImlhdCI6MTcxNjE5Mjk3NywiZXhwIjoxNzE2MTk2NTc3LCJzdWIiOiJzU3Rsb0Y4In0.Fu92NdGCwbu8B9MIeBjH47q1LBcAeJRIcqtr7pj-nE4",
+      "likedPosts": ["macchiatto", "macchiatto", "macchiatto", "doppio"]
+    },
+    {
+      "email": "lizakobzeva@list.ru",
+      "password": "$2a$10$E5Tlqq3/k3E74ayXS6p3JOEZMB3BjFHVE.0w5Hgfgki2n/xX2RlRq",
+      "name": "lizakobzeva",
+      "id": "RYI6LFU"
+    },
+    {
+      "email": "cat@cat.com",
+      "password": "$2a$10$64.721nJCBbXIdPhkDynmundVrAIWS6TjAajcyCwkBQwd8wVeHqCa",
+      "name": "cat",
+      "id": "-ba0hrx"
+    },
+    {
+      "email": "ovchnnikov666@gmail.com",
+      "password": "$2a$10$Ps57Kbqiu5Q2ScMvIDRyvuP73t0mJFaCXZ9Y3nWuNoB3AZRkaia1.",
+      "name": "Gitler",
+      "id": "6AtnTZB"
+    }
+  ],
+  "posts": [{}]
+}
