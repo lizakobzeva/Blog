@@ -53,6 +53,7 @@ const CreatePostForm = () => {
           type="text"
           className={style.formStyle}
           placeholder="Title"
+          maxLength={40}
         />
       </div>
 

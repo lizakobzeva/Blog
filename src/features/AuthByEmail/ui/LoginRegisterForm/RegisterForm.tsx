@@ -1,7 +1,6 @@
 import style from "./LoginRegisterForm.module.scss";
 import Button from "shared/ui/Button";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "app/providers/StoreProvider";
 import { RegisterByEmail } from "../../model/services/RegisterByEmail/RegisterByEmail";
@@ -15,7 +14,6 @@ type Inputs = {
 };
 
 const RegisterForm = () => {
-  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const {
     register,
@@ -38,13 +36,14 @@ const RegisterForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={style.centerWrap}>
       {error && <h4 className={style.errorTitle}>Ошибка при регистрации</h4>}
-      <h4 className={style.cardTitle}>{t("Sign Up")}</h4>
+      <h4 className={style.cardTitle}>Sign Up</h4>
       <div className={style.formGroup}>
         <input
           {...register("name", { required: true })}
           type="text"
           className={style.formStyle}
-          placeholder={t("Your Name")}
+          placeholder="Your Name"
+          maxLength={15}
         />
       </div>
       <div className={style.formGroup}>
@@ -52,7 +51,8 @@ const RegisterForm = () => {
           {...register("email", { required: true })}
           type="email"
           className={style.formStyle}
-          placeholder={t("Your Email")}
+          placeholder="Your Email"
+          maxLength={30}
         />
       </div>
       <div className={style.formGroup}>
@@ -60,10 +60,10 @@ const RegisterForm = () => {
           {...register("password", { required: true })}
           type="password"
           className={style.formStyle}
-          placeholder={t("Your Password")}
+          placeholder="Your Password"
         />
       </div>
-      <Button>{t("Submit")}</Button>
+      <Button>Submit</Button>
     </form>
   );
 };

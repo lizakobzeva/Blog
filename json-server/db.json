@@ -1,25 +1,6 @@
 {
   "users": [
     {
-      "email": "saha@ldif.com",
-      "password": "$2a$10$LpWLbjNa8jVzzXnJ8ctg4./Q9tiGLYQ0HyCSzoP8UXe3mrjKF1zNm",
-      "name": "sasha",
-      "id": "x6ug4cY"
-    },
-    {
-      "email": "lizakob@list.ru",
-      "password": "$2a$10$Q0hgfbgK37atLLp0UF1Q3ONJl2zrqTF6z/otstqkcf96UBIo1YNfy",
-      "name": "liza",
-      "id": "sStloF8",
-      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpemFrb2JAbGlzdC5ydSIsImlhdCI6MTcxNjE5Mjk3NywiZXhwIjoxNzE2MTk2NTc3LCJzdWIiOiJzU3Rsb0Y4In0.Fu92NdGCwbu8B9MIeBjH47q1LBcAeJRIcqtr7pj-nE4",
-      "likedPosts": [
-        "macchiatto",
-        "macchiatto",
-        "macchiatto",
-        "doppio"
-      ]
-    },
-    {
       "email": "lizakobzeva@list.ru",
       "password": "$2a$10$E5Tlqq3/k3E74ayXS6p3JOEZMB3BjFHVE.0w5Hgfgki2n/xX2RlRq",
       "name": "lizakobzeva",
@@ -30,21 +11,18 @@
         "32",
         "30",
         "31",
-        "35",
         "34"
       ]
     },
     {
-      "email": "cat@cat.com",
-      "password": "$2a$10$64.721nJCBbXIdPhkDynmundVrAIWS6TjAajcyCwkBQwd8wVeHqCa",
-      "name": "cat",
-      "id": "-ba0hrx"
-    },
-    {
-      "email": "ovchnnikov666@gmail.com",
-      "password": "$2a$10$Ps57Kbqiu5Q2ScMvIDRyvuP73t0mJFaCXZ9Y3nWuNoB3AZRkaia1.",
-      "name": "Gitler",
-      "id": "6AtnTZB"
+      "email": "a@a",
+      "password": "$2a$10$V0OZ.Kso3mfzNR/ZKCzs8.arXEOMq14ybBTvr.ZOwcM8dMaC3qNEu",
+      "name": "qqw r d wwq r d",
+      "likedPosts": [
+        "",
+        "37"
+      ],
+      "id": "cuuy3ze"
     }
   ],
   "posts": [
@@ -285,6 +263,20 @@
       "text": "Первый осмысленный текст на этом сайте) Просто потрясающе. Наконец то дождались чего-то вменяемого а не очередного fjdashsdjf;ajklsdjfajjjkldskjlad.",
       "imageUrl": "https://i.pinimg.com/originals/2f/7c/14/2f7c14beb92c6525a864e7c5a788c8d2.jpg",
       "id": 35
+    },
+    {
+      "userId": "cuuy3ze",
+      "title": "ASDFHSA DFBLJSDBF;H JIHEHHDdklsnfalsd",
+      "text": "fsdfasdfnjlbcvjkb;OSDJFDBJKD",
+      "imageUrl": "https://webpulse.imgsmail.ru/imgpreview?mb=webpulse&key=pulse_cabinet-image-cab2f4c4-4158-4e29-8ac2-53d7d27313d1",
+      "id": "36"
+    },
+    {
+      "userId": "cuuy3ze",
+      "title": "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+      "text": "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+      "imageUrl": "https://funik.ru/wp-content/uploads/2020/10/8169b37958199faa606d-1.jpg",
+      "id": "37"
     }
   ]
 }

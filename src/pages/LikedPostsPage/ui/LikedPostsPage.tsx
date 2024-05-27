@@ -25,21 +25,25 @@ const LikedPostsPage = () => {
       setPosts(res.payload);
       setIsLoading(false);
     });
-  }, [authData.id]);
+  }, [authData?.id]);
 
   return isLoading ? (
     <Loader />
   ) : (
     <section className={`section container ${style.Posts}`}>
-      {NewPostsArray.map((post) => (
-        <Post
-          like={likedPosts.includes(`${post.id}`)}
-          key={post.id}
-          imageUrl={post.imageUrl}
-          title={post.title}
-          postId={post.id}
-        />
-      ))}
+      {authData?.id ? (
+        NewPostsArray.map((post) => (
+          <Post
+            like={likedPosts.includes(`${post.id}`)}
+            key={post.id}
+            imageUrl={post.imageUrl}
+            title={post.title}
+            postId={post.id}
+          />
+        ))
+      ) : (
+        <h2>Log in to your account</h2>
+      )}
     </section>
   );
 };

@@ -23,7 +23,7 @@ const FullPostPage = () => {
       setPost(res.payload);
       setIsLoading(false);
     });
-    authData.likedPosts.map((post) => console.log(typeof post, post));
+    authData?.likedPosts.map((post) => console.log(typeof post, post));
     console.log(params.id);
     if (authData?.likedPosts.includes(params.id)) {
       console.log("active");

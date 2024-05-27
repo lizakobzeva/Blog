@@ -1,12 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import style from "./NavBar.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-
 import Button from "shared/ui/Button";
 import ToggleThemButton from "shared/ui/ToggleThemeButton";
-import LangSwitcher from "shared/ui/LangSwitcher";
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { LoginRegisterModal } from "features/AuthByEmail/ui";
 import { USER_LOCALSTORAGE_KEY } from "shared/const/localStorage";
 import { useAppDispatch } from "app/providers/StoreProvider";
@@ -17,8 +14,6 @@ import Avatar from "shared/ui/Avatar";
 
 const NavBar = () => {
   const [IsModal, setIsModal] = useState(false);
-  const { t } = useTranslation();
-  const dispatch = useAppDispatch();
 
   const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
   const authData = useSelector(getAuthData);
@@ -77,7 +72,7 @@ const NavBar = () => {
           {user ? (
             <Avatar />
           ) : (
-            <Button onClick={() => setIsModal(true)}>{t("Log In")}</Button>
+            <Button onClick={() => setIsModal(true)}>Log In</Button>
           )}
         </div>
 
