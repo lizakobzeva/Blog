@@ -1,5 +1,5 @@
 .menu {
-  filter: drop-shadow(1px 1px 1px var(--color6));
+  filter: drop-shadow(1px 1px 1px black);
   height: 50px;
 
   .subMenu {
@@ -12,7 +12,7 @@
     margin: 0;
     padding: 6px 20px;
     background-color: var(--color2);
-    color: var(--color1);
+    color: var(--color3);
     max-width: 100%;
     p {
       transition: 100ms;
@@ -40,7 +40,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--color2);
-    color: var(--color1);
+    color: var(--color3);
   }
 
   button path {
