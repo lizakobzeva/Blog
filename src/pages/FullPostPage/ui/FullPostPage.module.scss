@@ -10,16 +10,28 @@
   justify-content: center;
   flex-direction: column;
   border-radius: 10px;
+  h2 {
+    word-wrap: break-word;
+  }
+  p {
+    word-wrap: break-word;
+  }
+
   .FullPostImage {
     max-width: 80%;
   }
-  p {
+  .text {
     max-width: 70%;
   }
   .cardHeader {
-    width: 60%;
+    h2 {
+      max-width: 90%;
+      display: inline;
+      word-wrap: break-word;
+    }
+    max-width: 60%;
     margin-top: 1.5rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: space-between;
   }

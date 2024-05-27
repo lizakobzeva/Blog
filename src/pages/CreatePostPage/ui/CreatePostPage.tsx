@@ -1,4 +1,4 @@
-import CreatePostForm from "features/CreatePost/ui/CreatePostForm/CreatePostForm";
+import CreatePostForm from "features/PostsOperations/ui/CreatePostForm/CreatePostForm";
 import style from "./CreatePostPage.module.scss";
 
 const CreatePostPage = () => {

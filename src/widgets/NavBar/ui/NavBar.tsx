@@ -67,7 +67,7 @@ const NavBar = () => {
             className={({ isActive }) =>
               isActive ? style.activeLink : style.link
             }
-            to={"/about"}
+            to={"/likedposts"}
           >
             Liked
           </NavLink>

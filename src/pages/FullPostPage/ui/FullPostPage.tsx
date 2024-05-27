@@ -1,43 +1,55 @@
+import { useParams } from "react-router-dom";
 import style from "./FullPostPage.module.scss";
+import { useEffect, useState } from "react";
+import { useAppDispatch } from "app/providers/StoreProvider";
+import { GetPost } from "features/PostsOperations/model/services/GetPost/GetPost";
+import Loader from "shared/ui/Loader";
+import AddLikedPostButton from "features/LikedPostOperations/ui/AddLikedPostButton/AddLikedPostButton";
+import { useSelector } from "react-redux";
+import { getAuthData } from "entities/User/model/selectors/getAuthData/getAuthData";
+
 const FullPostPage = () => {
-  return (
+  const params = useParams();
+  const { authData } = useSelector(getAuthData);
+  const [activeLike, setActiveLike] = useState(false);
+  const [post, setPost] = useState({ imageUrl: "", title: "", text: "" });
+  const [isLoading, setIsLoading] = useState(false);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    setIsLoading(true);
+    dispatch(GetPost(params.id)).then((res) => {
+      setPost(res.payload);
+      setIsLoading(false);
+    });
+    authData.likedPosts.map((post) => console.log(typeof post, post));
+    console.log(params.id);
+    if (authData?.likedPosts.includes(params.id)) {
+      console.log("active");
+      setActiveLike(true);
+    }
+  }, [params]);
+
+  return isLoading ? (
+    <Loader />
+  ) : (
     <div className={` section ${style.FullPostPage}`}>
-      <img
-        className={style.FullPostImage}
-        src="https://new-year-party.ru/wp-content/uploads/2018/09/koty-14.jpg"
-        alt=""
-      />
+      <img className={style.FullPostImage} src={`${post.imageUrl}`} alt="" />
 
       <div className={style.cardHeader}>
-        <h2>Full Post Name</h2>
-        <button className={style.iconButton}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            display="block"
-            id="Heart"
-          >
-            <path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z" />
-          </svg>
-        </button>
+        <h2>{post.title}</h2>
+        <AddLikedPostButton
+          postId={params.id}
+          active={activeLike}
+          onClick={() => {
+            setActiveLike(!activeLike);
+            console.log("like");
+          }}
+        />
       </div>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
+      <p className={style.text}>{post.text}</p>
       <div className={style.cardFooter}>
         <div className={`${style.cardMeta} ${style.cardMetaViews}`}>
           <svg

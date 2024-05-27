@@ -6,6 +6,7 @@ import { UserSlice } from "entities/User";
 import LoginSlice from "features/AuthByEmail/model/slice/LoginSlice";
 import { useDispatch } from "react-redux";
 import RegisterSlice from "features/AuthByEmail/model/slice/RegisterSlice";
+import postsSlice from "entities/Post/model/slice/postsSlice";
 
 const store = configureStore<StateShema>({
   reducer: {
@@ -13,6 +14,7 @@ const store = configureStore<StateShema>({
     counter: CounterSlice,
     user: UserSlice,
     login: LoginSlice,
+    posts: postsSlice,
   },
   devTools: _isDev,
 });
@@ -24,6 +26,7 @@ export function CreateReduxStore(initialState?: StateShema) {
       user: UserSlice,
       login: LoginSlice,
       register: RegisterSlice,
+      posts: postsSlice,
     },
     devTools: _isDev,
     preloadedState: initialState,
