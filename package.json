@@ -8,8 +8,6 @@
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "test": "jest",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "server": "json-server-auth ./json-server/db.json -p 8000 -r ./json-server/routes.json"
   },
   "keywords": [],
