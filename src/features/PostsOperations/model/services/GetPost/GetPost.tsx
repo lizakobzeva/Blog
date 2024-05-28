@@ -6,7 +6,7 @@ export const GetPost = createAsyncThunk(
   async (postId: string) => {
     try {
       const response = await axios.get(
-        `https://test-l2v1.onrender.com/${postId}`
+        `https://blogjsonapi.onrender.com/${postId}`
       );
 
       return response.data;

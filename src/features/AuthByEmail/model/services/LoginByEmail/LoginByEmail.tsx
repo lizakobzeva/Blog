@@ -13,7 +13,7 @@ export const LoginByEmail = createAsyncThunk(
   async (authData: LoginByEmailTypes, thunkAPI) => {
     try {
       const response = await axios.post(
-        "https://test-l2v1.onrender.com/login",
+        "https://blogjsonapi.onrender.com/login",
         authData
       );
 

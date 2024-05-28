@@ -15,7 +15,7 @@ export const AddLikedPost = createAsyncThunk(
   async (authData: AddItemInCartTypes, thunkAPI) => {
     try {
       const response = await axios.patch<User>(
-        `https://test-l2v1.onrender.com/users/${authData.id}`,
+        `https://blogjsonapi.onrender.com/users/${authData.id}`,
         authData
       );
 
