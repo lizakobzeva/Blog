@@ -5,7 +5,9 @@ export const GetPost = createAsyncThunk(
   "posts/getpost",
   async (postId: string) => {
     try {
-      const response = await axios.get(`http://localhost:8000/posts/${postId}`);
+      const response = await axios.get(
+        `https://test-l2v1.onrender.com/${postId}`
+      );
 
       return response.data;
     } catch (e) {

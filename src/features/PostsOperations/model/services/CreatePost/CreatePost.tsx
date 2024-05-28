@@ -14,7 +14,7 @@ export const CreatePost = createAsyncThunk(
   async (postData: CreatePostTypes, thunkAPI) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/posts",
+        "https://test-l2v1.onrender.com/posts",
         postData
       );
       // thunkAPI.dispatch(setPostsData(response.data.posts));

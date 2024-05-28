@@ -9,7 +9,9 @@ import Loader from "shared/ui/Loader";
 import { getAuthData } from "entities/User/model/selectors/getAuthData/getAuthData";
 
 const LikedPostsPage = () => {
-  const [posts, setPosts] = useState([{ id: "", imageUrl: "", title: "" }]);
+  const [posts, setPosts] = useState([
+    { id: "", imageUrl: "", title: "", text: "" },
+  ]);
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -39,6 +41,7 @@ const LikedPostsPage = () => {
             imageUrl={post.imageUrl}
             title={post.title}
             postId={post.id}
+            text={post.text}
           />
         ))
       ) : (

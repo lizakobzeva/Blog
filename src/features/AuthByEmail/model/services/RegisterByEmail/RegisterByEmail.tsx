@@ -15,7 +15,7 @@ export const RegisterByEmail = createAsyncThunk(
   async (authData: RegisterByEmailTypes, thunkAPI) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/register",
+        "https://test-l2v1.onrender.com/register",
         authData
       );
 
