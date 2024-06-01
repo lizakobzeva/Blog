@@ -9,8 +9,9 @@ interface PostType {
   postId: string;
   like: boolean;
   text: string;
+  date: string;
 }
-const Post = ({ imageUrl, title, postId, like, text }: PostType) => {
+const Post = ({ imageUrl, title, postId, like, text, date }: PostType) => {
   const [activeLike, setActiveLike] = useState(like);
   return (
     <div className={style.cardList}>
@@ -77,7 +78,7 @@ const Post = ({ imageUrl, title, postId, like, text }: PostType) => {
               <path d="M16 2v4" />
               <path d="M2 10h20" />
             </svg>
-            May 25, 2024
+            {date}
           </div>
         </div>
       </article>

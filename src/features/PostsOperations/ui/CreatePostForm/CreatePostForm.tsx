@@ -33,12 +33,14 @@ const CreatePostForm = () => {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
+    let date = new Date();
     const NewPost = {
       userId: authData?.authData?.id,
       title: data?.title,
       text: data?.text,
       imageUrl: image,
       id: `${posts.length + 1}`,
+      date: `${date.getMonth()} ${date.getDate()} ,${date.getFullYear()}`,
     };
     dispatch(CreatePost(NewPost));
     navigate("/");

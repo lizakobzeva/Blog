@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export interface CreatePostTypes {
+  date: string;
   title: string;
   text: string;
   imageUrl: string;
@@ -17,7 +18,7 @@ export const CreatePost = createAsyncThunk(
         "https://blogjsonapi.onrender.com/posts",
         postData
       );
-      // thunkAPI.dispatch(setPostsData(response.data.posts));
+
       return response.data.posts;
     } catch (e) {
       return thunkAPI.rejectWithValue("error");

@@ -10,7 +10,7 @@ import { getAuthData } from "entities/User/model/selectors/getAuthData/getAuthDa
 
 const LikedPostsPage = () => {
   const [posts, setPosts] = useState([
-    { id: "", imageUrl: "", title: "", text: "" },
+    { id: "", imageUrl: "", title: "", text: "", date: "" },
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useAppDispatch();
@@ -42,6 +42,7 @@ const LikedPostsPage = () => {
             title={post.title}
             postId={post.id}
             text={post.text}
+            date={post.date}
           />
         ))
       ) : (

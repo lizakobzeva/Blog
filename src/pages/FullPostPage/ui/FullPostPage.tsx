@@ -12,7 +12,12 @@ const FullPostPage = () => {
   const params = useParams();
   const { authData } = useSelector(getAuthData);
   const [activeLike, setActiveLike] = useState(false);
-  const [post, setPost] = useState({ imageUrl: "", title: "", text: "" });
+  const [post, setPost] = useState({
+    imageUrl: "",
+    title: "",
+    text: "",
+    date: "",
+  });
   const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useAppDispatch();
@@ -96,7 +101,7 @@ const FullPostPage = () => {
             <path d="M16 2v4" />
             <path d="M2 10h20" />
           </svg>
-          May 25, 2024
+          {post?.date}
         </div>
       </div>
     </div>
