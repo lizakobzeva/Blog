@@ -40,7 +40,7 @@ const CreatePostForm = () => {
       text: data?.text,
       imageUrl: image,
       id: `${posts.length + 1}`,
-      date: `${date.getMonth()} ${date.getDate()} ,${date.getFullYear()}`,
+      date: ` ${date.getDate()}.${date.getMonth()}.${date.getFullYear() % 100}`,
     };
     dispatch(CreatePost(NewPost));
     navigate("/");
