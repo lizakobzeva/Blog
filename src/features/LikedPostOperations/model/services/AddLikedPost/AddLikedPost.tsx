@@ -4,6 +4,7 @@ import { getAuthData } from "entities/User/model/selectors/getAuthData/getAuthDa
 import { setAuthData } from "entities/User/model/slice/UserSlice";
 import { User } from "entities/User/model/types/user";
 import { useSelector } from "react-redux";
+import { baseUrl } from "shared/const/axios";
 import { USER_LOCALSTORAGE_KEY } from "shared/const/localStorage";
 
 export interface AddItemInCartTypes {
@@ -15,7 +16,7 @@ export const AddLikedPost = createAsyncThunk(
   async (authData: AddItemInCartTypes, thunkAPI) => {
     try {
       const response = await axios.patch<User>(
-        `https://blogjsonapi.onrender.com/users/${authData.id}`,
+        `${baseUrl}/users/${authData.id}`,
         authData
       );
 

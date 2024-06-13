@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { setAuthData } from "entities/User/model/slice/UserSlice";
 import { User } from "entities/User/model/types/user";
+import { baseUrl } from "shared/const/axios";
 import { USER_LOCALSTORAGE_KEY } from "shared/const/localStorage";
 
 export interface LoginByEmailTypes {
@@ -12,10 +13,7 @@ export const LoginByEmail = createAsyncThunk(
   "login/loginByEmail",
   async (authData: LoginByEmailTypes, thunkAPI) => {
     try {
-      const response = await axios.post(
-        "https://blogjsonapi.onrender.com/login",
-        authData
-      );
+      const response = await axios.post(`${baseUrl}/login`, authData);
 
       localStorage.setItem(
         USER_LOCALSTORAGE_KEY,

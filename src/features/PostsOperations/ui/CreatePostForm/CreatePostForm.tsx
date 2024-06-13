@@ -5,9 +5,9 @@ import { useAppDispatch } from "app/providers/StoreProvider";
 import { useSelector } from "react-redux";
 import { getAuthData } from "entities/User/model/selectors/getAuthData/getAuthData";
 import { CreatePost } from "features/PostsOperations/model/services/CreatePost/CreatePost";
-import { getPostsSelector } from "features/LikedPostOperations/model/selectors/getPostsSelector/getPostsSelector";
-import { useNavigate } from "react-router-dom";
-import { ChangeEvent, useEffect, useState } from "react";
+
+import { useEffect, useState } from "react";
+import { GetPosts } from "features/PostsOperations/model/services/GetPosts/GetPosts";
 
 type Inputs = {
   imageUrl: string;
@@ -16,24 +16,29 @@ type Inputs = {
 };
 
 const CreatePostForm = () => {
+  const [posts, setPosts] = useState([
+    { id: "", imageUrl: "", title: "", text: "", date: "" },
+  ]);
   const [image, setImage] = useState<string>(
     "https://4x4photo.ru/wp-content/uploads/2023/07/3367df95-1e07-4b6d-b39f-025c33ae1706.jpg"
   );
   const dispatch = useAppDispatch();
-  const posts = useSelector(getPostsSelector);
-  const navigate = useNavigate();
+  useEffect(() => {
+    dispatch(GetPosts()).then((res) => {
+      setPosts(res.payload);
+    });
+  }, []);
   const authData = useSelector(getAuthData);
-  console.log(image);
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     let date = new Date();
+
     const NewPost = {
       userId: authData?.authData?.id,
       title: data?.title,
@@ -43,7 +48,7 @@ const CreatePostForm = () => {
       date: ` ${date.getDate()}.${date.getMonth()}.${date.getFullYear() % 100}`,
     };
     dispatch(CreatePost(NewPost));
-    navigate("/");
+    // navigate("/");
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={style.CreatePostForm}>
