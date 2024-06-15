@@ -8,6 +8,7 @@ import { CreatePost } from "features/PostsOperations/model/services/CreatePost/C
 
 import { useEffect, useState } from "react";
 import { GetPosts } from "features/PostsOperations/model/services/GetPosts/GetPosts";
+import { getPostErrorSelector } from "features/LikedPostOperations/model/selectors/getPostErrorSelector/getPostErrorSelector";
 
 type Inputs = {
   imageUrl: string;
@@ -29,7 +30,7 @@ const CreatePostForm = () => {
     });
   }, []);
   const authData = useSelector(getAuthData);
-
+  const IsError = useSelector(getPostErrorSelector);
   const {
     register,
     handleSubmit,
@@ -48,13 +49,14 @@ const CreatePostForm = () => {
       date: ` ${date.getDate()}.${date.getMonth()}.${date.getFullYear() % 100}`,
     };
     dispatch(CreatePost(NewPost));
-    // navigate("/");
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={style.CreatePostForm}>
       <div className={style.header}>
         <h2>Create post</h2>
-
+        {IsError && (
+          <h4 className={style.errorTitle}>Error when creating a post</h4>
+        )}
         <input
           {...register("title", { required: true })}
           type="text"
@@ -62,17 +64,25 @@ const CreatePostForm = () => {
           placeholder="Title"
           maxLength={40}
         />
+        {errors.title && (
+          <span className={style.errorTitle} role="alert">
+            {errors.title.message}
+          </span>
+        )}
       </div>
 
       <div className={style.body}>
         <div className={style.left}>
-          <div className={style.formGroup}>
-            <textarea
-              {...register("text", { required: true })}
-              className={`${style.formStyleText} ${style.formStyleTextArea}`}
-              placeholder="Text"
-            />
-          </div>
+          <textarea
+            {...register("text", { required: true })}
+            className={`${style.formStyleText} ${style.formStyleTextArea}`}
+            placeholder="Text"
+          />
+          {errors.text && (
+            <span className={style.errorTitle} role="alert">
+              {errors.text.message}
+            </span>
+          )}
         </div>
 
         <div className={style.right}>

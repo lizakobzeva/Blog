@@ -21,9 +21,11 @@
     width: 1em;
     height: 1em;
   }
-  &:hover {
-    background-color: #ec4646;
-    color: #fff;
+  @media screen and (min-width: 650px) {
+    &:hover {
+      background-color: #ec4646;
+      color: #fff;
+    }
   }
 }
 .active {

@@ -24,6 +24,9 @@
   }
   .section {
     margin-top: 100px;
+    @media screen and (max-width: 650px) {
+      margin-top: 150px;
+    }
   }
   .LoaderContainer {
     height: 80vh;

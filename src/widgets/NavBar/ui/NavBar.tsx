@@ -29,7 +29,7 @@ const NavBar = () => {
           <ToggleThemButton />
           <Link to={"/createpost"}>
             <Button>
-              Create post{" "}
+              <p className={style.CreatePostText}>Create post</p>
               <svg
                 width="25px"
                 height="25px"
@@ -68,13 +68,11 @@ const NavBar = () => {
           </NavLink>
         </div>
 
-        <div className={style.auth}>
-          {user ? (
-            <Avatar />
-          ) : (
-            <Button onClick={() => setIsModal(true)}>Log In</Button>
-          )}
-        </div>
+        {user ? (
+          <Avatar />
+        ) : (
+          <Button onClick={() => setIsModal(true)}>Log In</Button>
+        )}
 
         <LoginRegisterModal
           isOpend={IsModal}

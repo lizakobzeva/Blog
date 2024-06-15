@@ -38,6 +38,10 @@ export const postsSlice = createSlice({
 
     builder.addCase(CreatePost.fulfilled, (state, action) => {
       state.posts.push(action.payload);
+      state.isError = false;
+    });
+    builder.addCase(CreatePost.rejected, (state) => {
+      state.isError = true;
     });
   },
 });

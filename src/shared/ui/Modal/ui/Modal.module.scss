@@ -10,6 +10,9 @@
   .content {
     transition: 0.2s transform;
     transform: scale(0.5);
+    @media screen and (max-width: 650px) {
+      width: 90%;
+    }
   }
 }
 .opened {

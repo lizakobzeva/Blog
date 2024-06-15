@@ -11,6 +11,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 650px) {
+    // flex-direction: column;
+    // flex-flow: column;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 }
 .toggleBtn {
   overflow: hidden;
@@ -20,6 +27,13 @@
   justify-content: center;
   gap: 30px;
   width: 40%;
+  @media screen and (max-width: 1000px) {
+    gap: 20px;
+  }
+  @media screen and (max-width: 650px) {
+    width: 100%;
+    order: 3;
+  }
 }
 .link {
   font-size: var(--font-size-l);
@@ -34,11 +48,26 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  width: 30%;
+  @media screen and (max-width: 1000px) {
+    width: 49%;
+  }
+  @media screen and (max-width: 650px) {
+    width: auto;
+    gap: 10px;
+    order: 1;
+  }
 }
 .auth {
-  width: 30%;
-  display: flex;
-  justify-content: right;
-  align-items: center;
+  display: inline-flex;
+  @media screen and (min-width: 1000px) {
+    width: 20%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+}
+.CreatePostText {
+  @media screen and (max-width: 650px) {
+    display: none;
+  }
 }

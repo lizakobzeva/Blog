@@ -14,6 +14,11 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 1400px) {
+    margin-top: 20px;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
 }
 
 .header {
@@ -26,6 +31,17 @@
   }
   .formStyle {
     width: 50%;
+  }
+  @media screen and (max-width: 1400px) {
+    display: block;
+    h2 {
+      width: 100%;
+      text-align: center;
+    }
+    .formStyle {
+      margin-top: 25px;
+      width: 100%;
+    }
   }
 }
 
@@ -66,18 +82,31 @@
 
 .left {
   width: 50%;
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+  }
 }
 .right {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+    img {
+      margin-top: 10px;
+    }
+  }
 }
 .formStyleTextArea {
   width: 350px;
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+  }
 }
-// .image {
-//   margin-top: 50px;
-//   width: 100%;
-//   height: 100%;
-// }
+
+.errorTitle {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--error-color);
+}

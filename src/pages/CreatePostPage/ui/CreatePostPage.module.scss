@@ -10,4 +10,8 @@
   justify-content: center;
   flex-direction: column;
   border-radius: 10px;
+  @media screen and (max-width: 650px) {
+    width: 90%;
+    padding: 20px;
+  }
 }
