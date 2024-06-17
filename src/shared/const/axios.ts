@@ -1,3 +1,3 @@
-export const baseUrl = "https://blogjsonapi.onrender.com";
+export const baseUrl = "http://localhost:10000";
 
-// "http://localhost:10000"
+// "https://blogjsonapi.onrender.com"
