@@ -2,4 +2,4 @@
 
 Для запуска приложения:  `npm start`
 
-Ссылка на приложение: `https://blogliza.netlify.app/`
+Ссылка на приложение: <https://blogliza.netlify.app//>
